@@ -1,0 +1,2 @@
+version=3
+http://search.cpan.org/dist/RT-Extension-NotifyOwners/   .*/RT-Extension-NotifyOwners-v?(\d[\d.-]*)\.(?:tar(?:\.gz|\.bz2)?|tgz|zip)$

@@ -1,0 +1,18 @@
+Source: rt-extension-notifyowners
+Section: perl
+Priority: optional
+Maintainer: Evgeni Golov <evgeni@debian.org>
+Build-Depends: debhelper (>= 8)
+Build-Depends-Indep: perl (>= 5.8.9),
+ request-tracker4
+Standards-Version: 3.9.3
+Homepage: http://search.cpan.org/dist/RT-Extension-NotifyOwners/
+
+Package: rt4-extension-notifyowners
+Architecture: all
+Depends: ${misc:Depends}, ${perl:Depends},
+ perl
+Description: Owner notifications for RT
+ (no description was found)
+ .
+ This description was automagically extracted from the module by dh-make-perl.

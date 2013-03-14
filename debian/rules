@@ -1,0 +1,26 @@
+#!/usr/bin/make -f
+
+RT_VERSION=4
+PREFIX=/usr/share/request-tracker$(RT_VERSION)
+RT_PLUGIN=$(PREFIX)/plugins/RT-Extension-NotifyOwners
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	PREFIX=$(PREFIX) dh_auto_configure
+
+override_dh_auto_install:
+	dh_auto_install
+
+	# remove plugin copy from /usr/share/perl5
+	rm -rf $(CURDIR)/debian/rt$(RT_VERSION)-extension-notifyowners/usr/share/perl5/RT
+
+	# remove unused config
+	rm -rf $(CURDIR)/debian/rt$(RT_VERSION)-extension-notifyowners/$(RT_PLUGIN)/etc
+
+override_dh_perl:
+	dh_perl $(RT_PLUGIN)
+
+override_dh_auto_test:
+	# pass
